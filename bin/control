@@ -51,7 +51,7 @@ function use-source() {
     fi
     mkdir -p env
     cp $TMP/_env/* env/
-    
+
     bin/setup
 }
 
@@ -111,7 +111,7 @@ function stop() {
     if [ -f $sentinel_pid ]; then
         kill -s SIGTERM $(cat $sentinel_pid)
         rm $sentinel_pid
-    fi        
+    fi
 
     return 1
 }

@@ -9,7 +9,7 @@ bind <%= ENV['OPENSHIFT_REDIS_SENTINEL_HOST'] %>
 # The port that this sentinel instance will run on
 port <%= ENV['OPENSHIFT_REDIS_SENTINEL_PORT'] %>
 
-<% 
+<%
 case ENV['REDIS_DB_MODE']
 when 'read_replica'
   masters = ENV['REDIS_CLUSTER_MASTERS'].split(',')
@@ -125,7 +125,7 @@ end
 # NOTIFICATION SCRIPT
 #
 # sentinel notification-script <master-name> <script-path>
-# 
+#
 # Call the specified notification script for any sentienl event that is
 # generated in the WARNING level (for instance -sdown, -odown, and so forth).
 # This script should notify the system administrator via email, SMS, or any
@@ -149,7 +149,7 @@ end
 # When the failover starts, ends, or is aborted, a script can be called in
 # order to perform application-specific tasks to notify the clients that the
 # configuration has changed and the master is at a different address.
-# 
+#
 # The script is called in the following cases:
 #
 # Failover started (a slave is already promoted)
@@ -164,7 +164,7 @@ end
 #
 # <state> is "start", "end" or "abort"
 # <role> is either "leader" or "observer"
-# 
+#
 # The arguments from-ip, from-port, to-ip, to-port are used to communicate
 # the old address of the master and the new address of the elected slave
 # (now a master) in the case state is "start" or "end".
